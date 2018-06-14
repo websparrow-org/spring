@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="boss" class="org.websparrow.beans.Boss" c:name="Atul Rai" c:officeLocation="India"
+		c:employee-ref="emp" />
+
+	<bean id="emp" class="org.websparrow.beans.Employee" c:empName="Mukul" c:empSalary="1000000" />
+
+</beans>

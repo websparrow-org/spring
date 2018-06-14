@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="c" class="org.websparrow.beans.Car">
+		<property name="carNames">
+			<list>
+				<value>Hindustan Moters</value>
+				<value>Tata Moters</value>
+				<value>Ashoka Leyland</value>
+			</list>
+		</property>
+		<property name="engines">
+			<list>
+				<ref bean="e1" />
+				<ref bean="e2" />
+				<ref bean="e3" />
+			</list>
+		</property>
+	</bean>
+
+	<bean id="e1" class="org.websparrow.beans.Engine">
+		<property name="modelYear" value="1991" />
+	</bean>
+	<bean id="e2" class="org.websparrow.beans.Engine">
+		<property name="modelYear" value="1992" />
+	</bean>
+	<bean id="e3" class="org.websparrow.beans.Engine">
+		<property name="modelYear" value="1993" />
+	</bean>
+
+</beans>

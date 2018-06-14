@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="e" class="org.websparrow.beans.Engine">
+		<property name="engineNumber" value="A123GAAG" />
+		<property name="modelYear" value="2018" />
+	</bean>
+
+	<bean id="c" class="org.websparrow.beans.Car">
+	
+		<!-- passing reference of Engine class -->
+		<property name="engine" ref="e" />
+		
+		<property name="carName" value="Honda" />
+	</bean>
+	
+</beans>

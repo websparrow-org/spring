@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- activate the @Required annotation -->
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor" />
+
+	<!-- you must need to inject all those parameters value where you have applied @Required annotation -->
+	<bean id="emp" class="org.websparrow.beans.Employee">
+		<property name="firstName" value="Atul" />
+<!-- 		<property name="mobile" value="236181627" /> -->
+	</bean>
+
+</beans>

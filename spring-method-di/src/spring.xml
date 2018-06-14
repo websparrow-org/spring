@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- for car interface provide look-up method di -->
+
+	<bean id="car" class="org.websparrow.beans.Car">
+		<lookup-method name="myCarEngine" bean="e" />
+	</bean>
+
+	<bean id="e" class="org.websparrow.beans.Engine">
+		<property name="name" value="BMW Car Engine" />
+	</bean>
+
+	<!-- for bus abstract class provide look-up method di -->
+
+	<bean id="bus" class="org.websparrow.beans.Bus">
+		<lookup-method name="myBusEngine" bean="e1" />
+	</bean>
+
+	<bean id="e1" class="org.websparrow.beans.Engine">
+		<property name="name" value="Volvo Bus Engine" />
+	</bean>
+
+	<!-- for truck concrete class provide look-up method di -->
+
+	<bean id="truck" class="org.websparrow.beans.Truck">
+		<lookup-method name="myTruckEngine" bean="e2" />
+	</bean>
+
+	<bean id="e2" class="org.websparrow.beans.Engine">
+		<property name="name" value="TATA Truck Engine" />
+	</bean>
+
+</beans>
