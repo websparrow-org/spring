@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- create target -->
+	<bean id="bank" class="org.websparrow.business.Bank" />
+
+	<!-- create advice -->
+	<bean id="service" class="org.websparrow.service.LoggingService" />
+
+	<!-- create pointcut -->
+	<bean id="depositPointcut" class="org.websparrow.service.PointcutService" />
+
+	<!-- add pointcut + advice to the advisor -->
+	<bean id="advisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">
+		<property name="advice" ref="service" />
+		<property name="pointcut" ref="depositPointcut" />
+	</bean>
+
+	<!-- add target + advisor to proxy -->
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="bank" />
+		<property name="interceptorNames">
+			<list>
+				<value>advisor</value>
+			</list>
+		</property>
+	</bean>
+</beans>
