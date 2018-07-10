@@ -9,9 +9,10 @@ import org.springframework.stereotype.Component;
 @Aspect
 public class LogBeforeAdvice {
 
-	// It will execute only for deposit method
+	// It will execute only for Bank's deposit method
 	@Pointcut("execution(* org.websparrow.service.Bank.deposit(..))")
-	public void depositPointcut() {	}
+	public void depositPointcut() {
+	}
 
 	@Before("depositPointcut()")
 	public void logBefore() {
